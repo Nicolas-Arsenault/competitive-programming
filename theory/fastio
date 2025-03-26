@@ -1,1 +1,5 @@
 ios::sync_with_stdio(false); cin.tie(NULL);
+
+/* must use with \n 
+   Dont use with interactive problems (that need output directly)
+   Dont use outside of comp prog*/
