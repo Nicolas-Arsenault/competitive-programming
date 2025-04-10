@@ -177,4 +177,43 @@ class Solution {
 }
 ```
 
-### Pascal's triangle
+### Pascal's triangle - Dynamic Programming
+Algorithm technique.
+
+Basically, solving subproblems first and then solving the larger problem using these subproblems. 
+
+```
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        
+        List<List<Integer>> result = new ArrayList<>();
+        //we know that the first row is only a one...
+        result.add(new ArrayList<>());
+        result.get(0).add(1);
+        
+        for(int row = 1; row < numRows; row ++)
+        {
+            List<Integer> currRow = new ArrayList<>();
+            List<Integer> prevRow = result.get(row - 1);
+            
+            //starts by 1...
+            currRow.add(1);
+            
+            //go through the prev row
+            for(int i = 1; i < prevRow.size(); i ++)
+            {
+                currRow.add(prevRow.get(i - 1) + prevRow.get(i));
+            }
+            
+            
+            //ends by 1
+            currRow.add(1);
+            result.add(currRow);
+        }
+        
+        
+        
+        return result;
+    }
+}
+```
