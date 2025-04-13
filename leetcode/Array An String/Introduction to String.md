@@ -134,3 +134,100 @@ public class Main {
 
 ### Add Binary
 
+Given two strings, add them as binary
+
+```
+class Solution {
+    public String addBinary(String a, String b) {
+        
+        StringBuilder sb = new StringBuilder();
+        int indexA = a.length() - 1;
+        int indexB = b.length() - 1;
+        int carry = 0;
+        
+        
+        while(indexA >= 0 || indexB >= 0 || carry != 0)
+        {
+            int sum = carry;
+            sum += (indexA >= 0 ? a.charAt(indexA--) - '0' : 0);
+            sum += (indexB >= 0 ? b.charAt(indexB--) - '0': 0);
+            
+            sb.append(sum % 2);
+            carry = sum / 2;
+        }
+        
+        sb.reverse();
+        return sb.toString();
+    }
+}
+```
+
+### Implement strStr() -- sliding window 
+
+We need to find first index of substring in string.
+
+We use a for loop which will be the start of our window, then we use another for loop to check all occurences against the nested string
+
+```
+class Solution {
+    public int strStr(String haystack, String needle) {
+        
+        int n = haystack.length();
+        int m = needle.length();
+        
+        for(int windowStart = 0; windowStart <= n - m; windowStart ++)
+        {
+            for(int i = 0; i < m; i ++)
+            {
+                if(needle.charAt(i) != haystack.charAt(windowStart + i))
+                {
+                    break;
+                }
+                
+                if(i == m - 1)
+                {
+                    return windowStart;
+                }
+            }
+        }
+        
+        return -1;
+    }
+}
+```
+
+
+
+### Longest common prefix
+
+
+
+```
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) return "";
+
+        StringBuilder result = new StringBuilder();
+        
+        //go through the whole first word
+        for (int indexCheck = 0; indexCheck < strs[0].length(); indexCheck++) 
+        {
+            char currentChar = strs[0].charAt(indexCheck);
+
+            for (int i = 1; i < strs.length; i++) {
+                // If we hit end of any string OR chars don't match → we're done
+                if (indexCheck >= strs[i].length() || strs[i].charAt(indexCheck) != currentChar) {
+                    return result.toString();
+                }
+            }
+
+            // All matched → add to result
+            result.append(currentChar);
+        }
+
+        return result.toString();
+    }
+}
+
+```
+
