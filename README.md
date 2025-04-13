@@ -12,5 +12,5 @@ I will mostly solve leetcode problems and do theory. I bought premium. Otherwise
 
 ## Current stats (2025/04)
 
+![image](https://github.com/user-attachments/assets/33b86916-245f-4de5-84f3-3ba217c126de)
 
-![image](https://github.com/user-attachments/assets/98775de0-1ffc-4759-9d14-0b346f3353ea)
