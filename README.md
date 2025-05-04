@@ -11,6 +11,5 @@ As I said, I have one year.
 I will mostly solve leetcode problems and do theory. I bought premium. Otherwise, I will try some other problems on codeforces etc...
 
 ## Current stats (2025/04)
-
-![image](https://github.com/user-attachments/assets/33b86916-245f-4de5-84f3-3ba217c126de)
+![image](https://github.com/user-attachments/assets/904bf4fe-baf5-4ca6-a77b-4d9d2cae30b2)
 
