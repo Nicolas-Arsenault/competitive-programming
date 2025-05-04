@@ -88,3 +88,94 @@ class Solution {
 ```
 
 
+## To REVIEW LATER
+## Flatten a Multilevel DoublyLlinked list - DFS and RECURSION
+
+```
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public Node prev;
+    public Node next;
+    public Node child;
+};
+*/
+
+class Solution {
+    
+    private Node dfs(Node prev, Node curr)
+    {
+        if(curr == null) return prev;
+        curr.prev = prev;
+        prev.next = curr;
+
+        Node tempNext = curr.next;
+
+        Node tail = dfs(curr,curr.child);
+        curr.child = null;
+
+        return dfs(tail, tempNext);
+    }
+
+    public Node flatten(Node head) {
+        
+        if(head == null) return null;
+
+        Node sentinel = new Node(0,null,head,null);
+
+        dfs(sentinel, head);
+
+        sentinel.next.prev=null;
+        return sentinel.next;
+
+    }
+}
+```
+
+## Insert into a cyclic sorted list
+
+```
+class Solution {
+    public Node insert(Node head, int insertVal) {
+        if (head == null) {
+            Node newNode = new Node(insertVal);
+            newNode.next = newNode;
+            return newNode;
+        }
+
+        Node prev = head;
+        Node curr = head.next;
+        boolean inserted = false;
+
+        do {
+            if (prev.val <= insertVal && insertVal <= curr.val) {
+                // Normal case: insertVal is between prev and curr
+                inserted = true;
+            } else if (prev.val > curr.val) {
+                // Wrap-around point: max to min
+                if (insertVal >= prev.val || insertVal <= curr.val) {
+                    inserted = true;
+                }
+            }
+
+            if (inserted) {
+                Node newNode = new Node(insertVal, curr);
+                prev.next = newNode;
+                return head;
+            }
+
+            prev = curr;
+            curr = curr.next;
+
+        } while (prev != head);
+
+        // If we didn't insert in the loop, insert anywhere (e.g., all values are the same)
+        Node newNode = new Node(insertVal, curr);
+        prev.next = newNode;
+        return head;
+    }
+}
+
+```
+
