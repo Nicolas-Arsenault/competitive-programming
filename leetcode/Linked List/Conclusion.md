@@ -179,3 +179,93 @@ class Solution {
 
 ```
 
+## Rotate list:
+
+```
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+
+        if(head == null || head.next == null || k == 0) return head;
+        
+        int len = 1;
+        ListNode curr = head;
+        
+        while(curr.next != null)
+        {
+            curr = curr.next;
+            len ++;
+        }
+        
+        curr.next = head;
+        k %= len; // k % len
+        int tailPos = len -k;
+        ListNode tail = head;
+        
+        for(int i = 0; i < tailPos - 1; i ++) tail = tail.next;
+        
+        ListNode newHead = tail.next;
+        tail.next = null;
+        
+        return newHead;
+    }
+}
+
+```
+
+## Copy List with Random Pointer
+```
+/*
+// Definition for a Node.
+class Node {
+    int val;
+    Node next;
+    Node random;
+
+    public Node(int val) {
+        this.val = val;
+        this.next = null;
+        this.random = null;
+    }
+}
+*/
+
+class Solution {
+    public Node copyRandomList(Node head) {
+        
+        if(head == null) return null;
+        
+        HashMap<Node,Node> nodeMap = new HashMap<>();
+        
+        Node curr = head;
+        nodeMap.put(curr, new Node(curr.val));
+        
+        while(curr != null)
+        {
+            Node currClone = nodeMap.get(curr);
+            
+            if(curr.random != null && !nodeMap.containsKey(curr.random))
+            {
+                nodeMap.put(curr.random, new Node(curr.random.val));
+            }
+            
+            Node randomClone = nodeMap.get(curr.random);
+            currClone.random = randomClone;
+            
+            if(curr.next != null && !nodeMap.containsKey(curr.next))
+            {
+                nodeMap.put(curr.next, new Node(curr.next.val));
+            }
+            
+            Node nextClone = nodeMap.get(curr.next);
+            currClone.next = nextClone;
+            
+            currClone = currClone.next;
+            curr = curr.next;
+        }
+        
+        return nodeMap.get(head);
+    }
+}
+```
+
+
