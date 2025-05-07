@@ -1,0 +1,203 @@
+{
+  "main": {
+    "id": "d82dd3256eb839f6",
+    "type": "split",
+    "children": [
+      {
+        "id": "60a7fa1b2dfb2582",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "56737813bcc11411",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "HashTable/intro.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "intro"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "44c84fe709a1198b",
+    "type": "split",
+    "children": [
+      {
+        "id": "747974e61a778da6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "af0149ff04bf2c52",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "a29d5254b7ad9400",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "e4d78e5d51cce57d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "10e02c4e0adae711",
+    "type": "split",
+    "children": [
+      {
+        "id": "409c4e7552641f5c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "15d2b8f342d2c09e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Array101/Array deletion.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Array deletion"
+            }
+          },
+          {
+            "id": "2c56c28f64aec150",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Array101/Array deletion.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Array deletion"
+            }
+          },
+          {
+            "id": "12807821be2e751f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "90e67f8a605c58ba",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Array101/Array deletion.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Array deletion"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "56737813bcc11411",
+  "lastOpenFiles": [
+    "hash_functions_table1.png",
+    "Linked List/Conclusion.md",
+    "HashTable/intro.md",
+    "HashTable",
+    "Array An String/Array Related Techniques.md",
+    "Array An String/TwoPointers - Scenario 1.md",
+    "Linked List/CLassic problems.md",
+    "Array An String/Introduction to String.md",
+    "Array An String/Introduction to 2d arrays.md",
+    "Array101/Intro.md",
+    "Array101/In-Place Operations.md",
+    "Array101/Searching for items in a an array.md",
+    "Array101/Inserting items into an array.md",
+    "Array101/Conclusion.md",
+    "Array101/Array deletion.md",
+    "comparison_of_time_complexity.png",
+    "Linked List/Doubly linked list.md",
+    "Linked List/intro.md",
+    "Linked List/Singly Linked List.md",
+    "screen-shot-2018-04-18-at-142428.png",
+    "screen-shot-2018-04-17-at-161130 1.png",
+    "screen-shot-2018-04-28-at-173055.png",
+    "screen-shot-2018-04-28-at-173045.png",
+    "screen-shot-2018-04-17-at-161130.png",
+    "Linked List/Two Pointer technique.md",
+    "screen-shot-2018-04-14-at-163525.png",
+    "screen-shot-2018-04-14-at-163336.png",
+    "screen-shot-2018-04-14-at-163143.png"
+  ]
+}

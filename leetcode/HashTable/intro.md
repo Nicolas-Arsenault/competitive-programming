@@ -41,3 +41,4 @@ These questions are related to `the capacity of the bucket` and `the number of k
 
 Typically, if N is constant and small, we can simply use an `array` to store keys in the same bucket. If N is variable or large, we might need to use `height-balanced binary search tree` instead.
 
+## Design a HashSet
