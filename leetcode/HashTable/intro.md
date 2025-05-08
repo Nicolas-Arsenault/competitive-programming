@@ -42,3 +42,187 @@ These questions are related to `the capacity of the bucket` and `the number of k
 Typically, if N is constant and small, we can simply use an `array` to store keys in the same bucket. If N is variable or large, we might need to use `height-balanced binary search tree` instead.
 
 ## Design a HashSet
+```
+class MyHashSet {
+    //0 to 1000000
+    public final int MAX_VALUE = 1000000;
+    public final int NB_BUCKETS = 100;
+    public List<List<Integer>> table;
+    
+    public MyHashSet() {
+        table = new ArrayList<>(NB_BUCKETS);
+        
+        for(int i = 0; i < NB_BUCKETS; i ++)
+        {
+            table.add(null);
+        }
+    }
+    
+    public void add(int key) {
+        int index = key % NB_BUCKETS; //map to the right bucket
+        List<Integer> child = table.get(index);
+        
+        if(child == null)
+        {
+            List<Integer> list = new LinkedList<>();
+            list.add(key);
+            table.set(index, list);
+        }
+        else
+        {
+            if(!child.contains(key))
+            {
+                child.add(key);
+            }
+        }
+        
+    }
+    
+    public void remove(int key) {
+        
+        int index = key % NB_BUCKETS; //map to the right bucket
+        List<Integer> child = table.get(index);
+        
+        if(child != null)
+        {
+            child.remove(Integer.valueOf(key)); //remove element based on its value and not index...
+        }
+        
+    }
+    
+    public boolean contains(int key) {
+        
+        int index = key % NB_BUCKETS;
+        List<Integer> child = table.get(index);
+        
+        return child != null && child.contains(key);
+        
+    }
+}
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet obj = new MyHashSet();
+ * obj.add(key);
+ * obj.remove(key);
+ * boolean param_3 = obj.contains(key);
+ */
+```
+
+## Design a hashmap
+
+```
+class Pair<K, V> {
+    public K key;
+    public V value;
+
+    public Pair(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+}
+
+
+class Bucket
+{
+    List<Pair<Integer,Integer>> bucket;
+    
+    public Bucket()
+    {
+        this.bucket = new LinkedList<Pair<Integer,Integer>>();
+    }
+    
+    public Integer get(int key)
+    {
+        for(Pair<Integer,Integer> pair : bucket)
+        {
+            if(pair.key.equals(key))
+            {
+                return pair.value;
+            }
+        }
+        return -1;
+    }
+    
+    public void remove(int key)
+    {
+        boolean found = false;
+        Pair<Integer,Integer> toRemove = null;
+        for(Pair<Integer,Integer> pair : bucket)
+        {
+            if(pair.key.equals(key))
+            {
+                toRemove = pair;
+            }
+        }
+        
+        if(toRemove != null)
+        {
+            bucket.remove(toRemove);
+        }
+
+    }
+    
+    public void put(int key, int value)
+    {
+        for(Pair<Integer,Integer> pair : bucket)
+        {
+            if(pair.key.equals(key))
+            {
+                pair.value = value;
+                return;
+            }
+        }
+        
+        Pair<Integer,Integer> pair = new Pair<Integer,Integer>(key,value);
+        bucket.add(pair);
+    }
+    
+}
+
+
+class MyHashMap {
+    
+    public final int NB_BUCKETS = 2096;
+    List<Bucket> hashTable;
+    
+    
+    public MyHashMap() {
+        this.hashTable = new ArrayList<Bucket>();
+        
+        for(int i = 0; i < NB_BUCKETS; i ++)
+        {
+            hashTable.add(new Bucket());
+        }
+    }
+    
+    public void put(int key, int value) {
+        int index = key % NB_BUCKETS;
+        
+        hashTable.get(index).put(key,value);
+        
+    }
+    
+    public int get(int key) {
+        int index = key % NB_BUCKETS;
+        
+        return hashTable.get(index).get(key);
+    }
+    
+    public void remove(int key) {
+        int index = key % NB_BUCKETS;
+        
+        hashTable.get(index).remove(key);
+    }
+}
+
+/**
+ * Your MyHashMap object will be instantiated and called as such:
+ * MyHashMap obj = new MyHashMap();
+ * obj.put(key,value);
+ * int param_2 = obj.get(key);
+ * obj.remove(key);
+ */
+```
+
+![[Pasted image 20250507200216.png]]
