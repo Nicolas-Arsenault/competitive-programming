@@ -4,7 +4,7 @@ The ultimate goal is to be interview ready. I will go to uni in about 1 year, an
 
 ## Time
 
-As I said, I have one year.
+As I said, I have one year...
 
 ## How
 
