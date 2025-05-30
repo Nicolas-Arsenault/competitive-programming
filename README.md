@@ -6,6 +6,7 @@ The ultimate goal is to be interview ready. I will go to uni in about 1 year, an
 
 As I said, I have one year...
 
+needs update
 ## How
 
 I will mostly solve leetcode problems and do theory. I bought premium. Otherwise, I will try some other problems on codeforces etc...
