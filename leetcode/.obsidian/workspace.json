@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HashTable/intro.md",
+                "file": "HashTable/HashMap Usage.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "intro"
+              "title": "HashMap Usage"
             }
           }
         ]
@@ -171,10 +171,29 @@
   },
   "active": "56737813bcc11411",
   "lastOpenFiles": [
+    "HashTable/Practical Application - Hash Set.md",
+    "HashTable/HashMap Usage.md",
+    "HashTable/intro.md",
+    "typescript/Narrowing.md",
+    "typescript/Everyday Types.md",
+    "Pasted image 20250516140401.png",
+    "Pasted image 20250516140358.png",
+    "Pasted image 20250516140355.png",
+    "Pasted image 20250516134602.png",
+    "Pasted image 20250516133219.png",
+    "typescript/The basics.md",
+    "Pasted image 20250516090522.png",
+    "javascript/Types et grammaire.md",
+    "javascript/intro.md",
+    "typescript/PizzzaExample/index.js.md",
+    "javascript",
+    "Linked List/Singly Linked List.md",
+    "typescript/PizzzaExample",
+    "typescript",
+    "Linked List/intro.md",
     "Pasted image 20250507200216.png",
     "hash_functions_table1.png",
     "Linked List/Conclusion.md",
-    "HashTable/intro.md",
     "HashTable",
     "Array An String/Array Related Techniques.md",
     "Array An String/TwoPointers - Scenario 1.md",
@@ -189,16 +208,7 @@
     "Array101/Array deletion.md",
     "comparison_of_time_complexity.png",
     "Linked List/Doubly linked list.md",
-    "Linked List/intro.md",
-    "Linked List/Singly Linked List.md",
     "screen-shot-2018-04-18-at-142428.png",
-    "screen-shot-2018-04-17-at-161130 1.png",
-    "screen-shot-2018-04-28-at-173055.png",
-    "screen-shot-2018-04-28-at-173045.png",
-    "screen-shot-2018-04-17-at-161130.png",
-    "Linked List/Two Pointer technique.md",
-    "screen-shot-2018-04-14-at-163525.png",
-    "screen-shot-2018-04-14-at-163336.png",
-    "screen-shot-2018-04-14-at-163143.png"
+    "Linked List/Two Pointer technique.md"
   ]
 }
