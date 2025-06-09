@@ -123,3 +123,198 @@ class Solution {
 
 }
 ```
+
+### Minimum index sum of two lists
+```
+class Solution {
+
+    public String[] findRestaurant(String[] list1, String[] list2) {
+
+        Map<String,Integer> map1 = new HashMap<>();
+
+        Map<String,Integer> map2 = new HashMap<>();
+
+        List<String> result = new ArrayList<>();
+
+        int lowestIndexSum = Integer.MAX_VALUE;
+
+  
+
+        for(int i = 0; i < list1.length; i ++)
+
+        {
+
+            map1.put(list1[i],i);
+
+        }
+
+        for(int i = 0; i < list2.length; i ++)
+
+        {
+
+            map2.put(list2[i],i);
+
+        }
+
+        for(String item : list1)
+
+        {
+
+            if(map2.containsKey(item))
+
+            {
+
+                int tempMin = map2.get(item) + map1.get(item);
+
+                if(tempMin < lowestIndexSum)
+
+                {
+
+                    result.clear();
+
+                    lowestIndexSum = tempMin;
+
+                    result.add(item);
+
+                }
+
+                else if(tempMin == lowestIndexSum)
+
+                {
+
+                    result.add(item);
+
+                }
+
+            }
+
+        }
+
+        String[] arr = new String[result.size()];
+
+        return result.toArray(arr);    
+
+    }
+
+}
+```
+
+## Scenario II - Aggregate by Key
+
+## Intersection of twoa arrays II
+```
+class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        
+        Map<Integer, Integer> count2 = new HashMap<>();
+        List<Integer> result = new ArrayList<>();
+        
+        
+        for(int num2 : nums2)
+        {
+            if(!count2.containsKey(num2))
+            {
+                count2.put(num2,1);
+            }
+            else
+            {
+                int value = count2.get(num2);
+                value ++;
+                count2.put(num2,value);
+            }
+        }
+        
+        
+        for(int num : nums1)
+        {
+            if(count2.containsKey(num))
+            {
+                result.add(num);
+                int value = count2.get(num);
+                value --;
+                
+                if(value == 0)
+                {
+                    count2.remove(num);
+                }
+                else
+                {
+                    count2.put(num,value);                    
+                }
+                
+            }
+        }
+        
+       
+        return result.stream().mapToInt(i -> i).toArray();
+        
+    }
+}
+```
+
+## Contains Duplicate II
+
+Remember that using put with the same key will replace the value at the place
+
+```
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        Map<Integer,Integer> map = new HashMap<>();
+        
+        for(int i = 0; i < nums.length; i ++)
+        {
+            int extracted = nums[i];
+            
+            if(map.containsKey(extracted))
+            {
+                int index = map.get(extracted);
+                if(Math.abs(index - i) <= k)  return true;
+            }
+            
+            map.put(extracted,i);
+        }
+        return false;
+    }
+}
+```
+
+## Logger Rate Limiter
+
+```
+class Logger {
+    
+    Map<String,Integer> timestamps;
+
+    public Logger() {
+        timestamps = new HashMap<>();
+    }
+    
+    private void updateTimestamps(String message, int timestamp)
+    {
+        timestamps.put(message,timestamp + 10);
+    }
+    
+    public boolean shouldPrintMessage(int timestamp, String message) 
+    {
+        if(!timestamps.containsKey(message))
+        {
+            updateTimestamps(message,timestamp);
+            return true;
+        }
+        else if(timestamps.get(message) <= timestamp )
+        {
+            updateTimestamps(message,timestamp);
+            return true;
+        }
+        
+        return false;
+    }
+}
+
+/**
+ * Your Logger object will be instantiated and called as such:
+ * Logger obj = new Logger();
+ * boolean param_1 = obj.shouldPrintMessage(timestamp,message);
+ */
+```
+
