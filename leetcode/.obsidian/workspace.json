@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HashTable/Practical Application - Design the Key.md",
+                "file": "SystemDesign/Networking Essentials.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Practical Application - Design the Key"
+              "title": "Networking Essentials"
             }
           }
         ]
@@ -171,9 +171,11 @@
   },
   "active": "56737813bcc11411",
   "lastOpenFiles": [
+    "HashTable/Practical Application - Design the Key.md",
+    "SystemDesign/Networking Essentials.md",
+    "SystemDesign",
     "HashTable/Practical Application - Hash Set.md",
     "HashTable/HashMap Usage.md",
-    "HashTable/Practical Application - Design the Key.md",
     "HashTable/intro.md",
     "typescript/Narrowing.md",
     "typescript/Everyday Types.md",
@@ -209,7 +211,6 @@
     "Array101/Array deletion.md",
     "comparison_of_time_complexity.png",
     "Linked List/Doubly linked list.md",
-    "screen-shot-2018-04-18-at-142428.png",
-    "Linked List/Two Pointer technique.md"
+    "screen-shot-2018-04-18-at-142428.png"
   ]
 }
