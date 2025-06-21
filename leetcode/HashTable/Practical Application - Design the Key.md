@@ -114,3 +114,177 @@ class Solution {
 }
 ```
 
+## Group Shifted Strings
+The hard part of this problem is more on finding the math to find the key.
+But it makes sense, you just make it so that each time the first letter of the word is a, and shift the other letters acordingly. There, you have a key.
+
+```
+class Solution {
+    public List<List<String>> groupStrings(String[] strings) {
+        
+        Map<String, List<String>> map = new HashMap<>();
+        
+        for(String s : strings)
+        {
+            String key = getHash(s);
+            
+            if(!map.containsKey(key))
+            {
+                map.put(key,new ArrayList<>());
+            }
+            
+            map.get(key).add(s);
+        }
+        
+        List<List<String>> result = new ArrayList<>();
+        for(List<String> list : map.values())
+        {
+            result.add(list);   
+        }
+        
+        return result;
+    }
+    
+    private char shiftString(char letter, int shift)
+    {
+        return (char)((letter - shift + 26) % 26 + 'a');
+    }
+    
+    private String getHash(String s)
+    {
+        char[] arr = s.toCharArray();
+        char shift = arr[0];
+        char[] key = new char[arr.length];
+        
+        for(int i = 0; i < arr.length; i ++)
+        {
+            key[i] = shiftString(arr[i],shift);
+        }
+        
+        return (new String(key));
+    }
+}
+```
+
+
+## Valid Sudoku
+
+This question is quite tricky because we want to avoid going through each col and row.
+The trick is, we need to determine what each value has in common: a row, a column and a box.
+So we create hashmaps for all three of these. Now, instead of storing a list in the hashmap, we will use a hashset to see if a value is unique. Here the lambda expression is a function. K represents a key.
+
+
+```
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+    
+        Map<Integer, HashSet<Character>> row = new HashMap<>();
+        Map<Integer,HashSet<Character>> col = new HashMap<>();
+        Map<String, HashSet<Character>> box = new HashMap<>();
+        
+        for(int i = 0; i < 9; i ++)
+        {
+            for(int j = 0; j < 9; j ++)
+            {
+                if(board[i][j] == '.') continue;
+                
+                String key = i/3 + "," + j/3;
+                
+                if(row.computeIfAbsent(i, k -> new HashSet<Character>()).contains(board[i][j]) ||
+                    col.computeIfAbsent(j, k -> new HashSet<Character>()).contains(board[i][j]) ||
+                    box.computeIfAbsent(key, k -> new HashSet<Character>()).contains(board[i][j]))
+                {
+                    return false;
+                }
+                
+                row.get(i).add(board[i][j]);
+                col.get(j).add(board[i][j]);
+                box.get(key).add(board[i][j]);
+            }
+        }
+        
+        return true;
+        
+    }
+}
+```
+
+## Find duplicate subtrees
+Didnt really understand... need to redo
+
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+
+    final String NT = "X";
+
+    Set<String> visited = new HashSet<>();
+
+    Map<String, TreeNode> res = new HashMap<>();
+
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root){
+        postOrderTraversal(root);
+        return new LinkedList<>(res.values());
+    }
+    
+    private String postOrderTraversal(TreeNode node){
+        StringBuilder sb = new StringBuilder();
+        String leftSubtree = NT, rightSubtree = NT;
+        
+        if(node.left != null)
+        {
+            leftSubtree = postOrderTraversal(node.left);
+        }
+        
+        if(node.right != null)
+        {
+            rightSubtree = postOrderTraversal(node.right);
+        }
+        
+        sb.append(node.val);
+        
+        sb.append(",");
+        sb.append(leftSubtree);
+        sb.append(",");
+        sb.append(rightSubtree);
+        
+        String curSubtree = sb.toString();
+        saveDupluicateSubtree(node,curSubtree);
+        visited.add(curSubtree);
+        return curSubtree;
+    }
+    private void saveDupluicateSubtree(TreeNode node, String key){
+        if(visited.contains(key)){
+            res.put(key,node);
+        }
+    }
+}
+```
+
+## Design the Key - Summary
+When the order of each element in the string/array doesn't matter, you can use the `sorted string/array` as the key.
+
+If you only care about the offset of each value, usually the offset from the first value, you can use the `offset` as the key.
+
+n a tree, you might want to directly use the `TreeNode` as key sometimes. But in most cases, the `serialization of the subtree` might be a better idea.
+
+In a matrix, you might want to use `the row index` or `the column index` as key.
+
+In a Sudoku, you can combine the row index and the column index to identify which `block` this element belongs to.
+
+Sometimes, in a matrix, you might want to aggregate the values in the same `diagonal line`.
+

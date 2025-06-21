@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SystemDesign/Networking Essentials.md",
+                "file": "HashTable/Conclusion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Networking Essentials"
+              "title": "Conclusion"
             }
           }
         ]
@@ -169,14 +169,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "56737813bcc11411",
+  "active": "af0149ff04bf2c52",
   "lastOpenFiles": [
-    "HashTable/Practical Application - Design the Key.md",
-    "SystemDesign/Networking Essentials.md",
-    "SystemDesign",
+    "Queue n stack",
     "HashTable/Practical Application - Hash Set.md",
+    "HashTable/Conclusion.md",
     "HashTable/HashMap Usage.md",
+    "SystemDesign/Networking Essentials.md",
+    "HashTable/Practical Application - Design the Key.md",
     "HashTable/intro.md",
+    "SystemDesign",
     "typescript/Narrowing.md",
     "typescript/Everyday Types.md",
     "Pasted image 20250516140401.png",
@@ -208,9 +210,7 @@
     "Array101/Searching for items in a an array.md",
     "Array101/Inserting items into an array.md",
     "Array101/Conclusion.md",
-    "Array101/Array deletion.md",
     "comparison_of_time_complexity.png",
-    "Linked List/Doubly linked list.md",
     "screen-shot-2018-04-18-at-142428.png"
   ]
 }
